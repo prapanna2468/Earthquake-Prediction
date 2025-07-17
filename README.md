@@ -19,11 +19,6 @@ training time but got around 90% accuracy.
 How to Run the Code
 To run the project, first clone the repository from GitHub. Then, open the notebook in Google Colab or any compatible Jupyter environment. For Colab, enable GPU runtime by going to Runtime → Change runtime type → GPU. The required libraries can be installed directly in the Colab environment using simple pip commands. The standard scikit-learn library is used for the CPU and parallel versions of Random Forest, while the cuML library from NVIDIA’s RAPIDS ecosystem is used for the GPU implementation.
 
-In Colab, you can install cuML with:
-bash
-!pip install cuml-cu11 --extra-index-url=https://pypi.nvidia.com
-Other dependencies include scikit-learn, matplotlib, and seaborn for visualization.
-
 Evaluation and Results
 The model achieves approximately 85% accuracy for both the Depth classification and the Magnitude classification tasks across all three execution modes. However, the main difference lies in the execution time. The CPU version takes the longest time to train, the parallel version is faster due to multi-threading with n_jobs=-1, and the GPU version using cuML is the fastest, achieving a significant reduction in computation time. Confusion matrices and classification reports are generated in the notebook to visualize the prediction performance and identify any potential issues with class balance or misclassification.
 
